@@ -11,22 +11,24 @@
   </head>
   <body>
     <!-- Slide for setting the lateral size of the board -->
-    <div class="slider">
-      <div class="textContainer">Squares for side:</div>
-      <div class="slideContainer">
-        <input
-          type="range"
-          min="8"
-          max="100"
-          value="54"
-          class="range"
-          id="boardRange"
-        />
-        <span id="rangeValue">54</span>
+    <div class="mainArea">
+      <div class="slider">
+        <div class="textContainer">Squares for side:</div>
+        <div class="slideContainer">
+          <input
+            type="range"
+            min="8"
+            max="100"
+            value="54"
+            class="range"
+            id="boardRange"
+          />
+          <span id="rangeValue">54</span>
+        </div>
       </div>
-    </div>
-    <div class="container" id="sketchBoard"></div>
+      <div class="container" id="sketchBoard"></div>
 
-    <script src="script.js" async defer></script>
+      <script src="script.js" async defer></script>
+    </div>
   </body>
 </html>
