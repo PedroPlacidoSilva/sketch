@@ -13,4 +13,12 @@ function grid(squares) {
   }
 }
 
+// Updates the value of the Slider
+
+let range = document.querySelector("input");
+
+range.addEventListener("input", function () {
+  document.getElementById("rangeValue").innerHTML = range.value;
+});
+
 grid(16);

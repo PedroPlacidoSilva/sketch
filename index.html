@@ -10,7 +10,22 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="sketchBoard"></div>
+    <!-- Slide for setting the lateral size of the board -->
+    <div class="slider">
+      <div class="textContainer">Squares for side:</div>
+      <div class="slideContainer">
+        <input
+          type="range"
+          min="8"
+          max="100"
+          value="54"
+          class="range"
+          id="boardRange"
+        />
+        <span id="rangeValue">54</span>
+      </div>
+    </div>
+    <div class="container" id="sketchBoard"></div>
 
     <script src="script.js" async defer></script>
   </body>

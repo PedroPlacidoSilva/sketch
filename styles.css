@@ -1,0 +1,75 @@
+/* Block with 960px */
+
+.body {
+  background-color: rgb(239, 231, 219);
+  min-height: 100vh;
+}
+
+.container {
+  width: 960px;
+  height: 960px;
+  background-color: white;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
+}
+
+.slideContainer {
+  /* Format of the slider */
+  position: relative; /*Normal flow of the page */
+  padding: 5px; /*Box size surrounding the slider */
+  background: rgb(
+    227,
+    220,
+    220
+  ); /* Color of the backgorund of the Box surrounding the slider */
+  border-radius: 40px; /* Rounding Corners of the Box size */
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1); /* horizontal offset of the shadow (+puts the shadow on the right - puts the shadow on the left) | Vertical offset of the shadow (+puts the shadow below - puts the shadow above | blur optional (The higher the number the more blurred | Color optional of the shadow) */
+}
+/* Format of the range slider */
+.range {
+  width: 200px; /* Horizontal width of the slider */
+  height: 15px; /* Height of the slider */
+  appearance: none; /*Changes the color of the range slider to none (in this case white) */
+  background: #edf1f4; /*Color of the range slider*/
+  border-radius: 15px; /* Round corners range slider */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); /* horizontal offset of the shadow (+puts the shadow on the right - puts the shadow on the left) | Vertical offset of the shadow (+puts the shadow below - puts the shadow above | blur optional (The higher the number the more blurred | Color optional of the shadow) */
+  overflow: hidden; /* to make the slider solid when we slide to right - This property runs in conjuction with box-shadow in range:: below*/
+}
+
+/*Format the pointer of the slieder*/
+.range::-webkit-slider-thumb {
+  appearance: none; /*Changes the color of the pointer slider to none (in this case white) */
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%; /* Pointer becomes a circle*/
+  border: 2px solid #0074cf; /*Border of the pointer becomes blue*/
+  box-shadow: -407px 0 0 400px #27a0ff; /* horizontal offset of the shadow (+puts the shadow on the right - puts the shadow on the left) | Vertical offset of the shadow (+puts the shadow below - puts the shadow above | blur optional (The higher the number the more blurred | Color optional of the shadow) */
+  /* The -407 is important it puts the slider solid from left to right. The -407 instead of -400 styles the corners near the pointer */
+  cursor: pointer;
+}
+
+/* Format the value of she range on the side of the slider */
+#rangeValue {
+  position: relative;
+  text-align: center;
+  display: inline;
+  font-size: 1.25em;
+  color: #fff;
+  background: #27a0ff;
+  padding: 0 15px 0 15px;
+  font-weight: 500;
+  margin-left: 5px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.textContainer {
+  /* Align padding of the textContainer to be equal to the slider  */
+  padding: 5px;
+}
