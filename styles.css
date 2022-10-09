@@ -77,3 +77,13 @@
   /* Align padding of the textContainer to be equal to the slider  */
   padding: 5px;
 }
+
+.container {
+  /* Set the space between div to 0 by setting the parent container font-size to 0 */
+  font-size: 0;
+}
+
+.square {
+  background-color: #27a0ff;
+  display: inline-block;
+}
