@@ -26,6 +26,16 @@ function grid(squares) {
     // Append div to the div "sketchBoard"
     document.getElementById("sketchBoard").appendChild(square);
   }
+
+  // Get all elements of squares and add event listener to each square
+  let allSquares = document.getElementsByClassName("square");
+  for (let i = 0; i < allSquares.length; ++i) {
+    allSquares[i].addEventListener("pointerdown", changeColor);
+  }
+}
+// Change color to "Black for every square touched"
+function changeColor() {
+  this.style.backgroundColor = "black";
 }
 
 let range = document.querySelector("input");
