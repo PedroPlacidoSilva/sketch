@@ -30,7 +30,7 @@ function grid(squares) {
   // Get all elements of squares and add event listener to each square
   let allSquares = document.getElementsByClassName("square");
   for (let i = 0; i < allSquares.length; ++i) {
-    allSquares[i].addEventListener("pointerdown", changeColor);
+    allSquares[i].addEventListener("mousemove", changeColor);
   }
 }
 // Change color to "Black for every square touched"
