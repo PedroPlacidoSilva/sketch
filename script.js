@@ -30,12 +30,23 @@ function grid(squares) {
   // Get all elements of squares and add event listener to each square
   let allSquares = document.getElementsByClassName("square");
   for (let i = 0; i < allSquares.length; ++i) {
-    allSquares[i].addEventListener("mousemove", changeColor);
+    allSquares[i].addEventListener("mousemove", randomRGB);
   }
 }
 // Change color to "Black for every square touched"
 function changeColor() {
   this.style.backgroundColor = "black";
+}
+
+// Change color to random "RGB"
+
+function randomRGB() {
+  // Set random number for rgb variables between 0 and 255
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  // Define the color for each time the event listener is applied
+  this.style.backgroundColor = `rgb(${r},${b},${g})`;
 }
 
 let range = document.querySelector("input");
