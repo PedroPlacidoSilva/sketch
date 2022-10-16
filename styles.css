@@ -5,6 +5,20 @@
   min-height: 100vh;
 }
 
+.choices {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0px 8px 0px;
+}
+
+.label {
+  font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  position: relative;
+  top: 3px;
+}
+
 .container {
   display: block;
   margin-left: auto;
