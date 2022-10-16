@@ -29,17 +29,33 @@ function grid(squares) {
 
   // Get all elements of squares and add event listener to each square
   let allSquares = document.getElementsByClassName("square");
-  for (let i = 0; i < allSquares.length; ++i) {
-    allSquares[i].addEventListener("mousemove", randomRGB);
+  let radioSelected = document.querySelectorAll('input[name="choiceBtn"]');
+
+  // Check which radio button as been selected
+
+  for (const radio of radioSelected) {
+    radio.addEventListener("click", () => {
+      // Add event listener to all squares on mouse mousemove and set the squares ink to randomColor or Black
+
+      if (radio.value == "randomColor") {
+        for (let i = 0; i < allSquares.length; ++i) {
+          allSquares[i].addEventListener("mousemove", randomRGB);
+        }
+      } else {
+        for (let i = 0; i < allSquares.length; ++i) {
+          allSquares[i].addEventListener("mousemove", changeColor);
+        }
+      }
+    });
   }
 }
+
 // Change color to "Black for every square touched"
 function changeColor() {
   this.style.backgroundColor = "black";
 }
 
 // Change color to random "RGB"
-
 function randomRGB() {
   // Set random number for rgb variables between 0 and 255
   let r = Math.floor(Math.random() * 256);
@@ -49,11 +65,18 @@ function randomRGB() {
   this.style.backgroundColor = `rgb(${r},${b},${g})`;
 }
 
-let range = document.querySelector("input");
-// Sets the firt number of div's on upload
+let range = document.getElementById("boardRange");
+// Sets the first number of div's on upload
 grid(range.value);
-// Updates the value of the Slider
+// Updates the value of the Slider and radio button when changed
+let btnUpdate;
 range.addEventListener("input", function () {
   document.getElementById("rangeValue").innerHTML = range.value;
+  btnUpdate = document.querySelectorAll('input[name="choiceBtn"]');
+  // Unchecks radio button when slider updates
+  for (const btn of btnUpdate) {
+    btn.checked = false;
+  }
+  // Updates the grid
   grid(range.value);
 });
